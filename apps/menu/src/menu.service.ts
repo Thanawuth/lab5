@@ -7,18 +7,14 @@ export class MenuService {
     { id: 2, name: 'Burger', price: 8.99 },
     { id: 3, name: 'Salad', price: 7.99 },
   ];
-  getMnenu() {
-    return this.menu;
-  }
-
   getMenuItem(id: number) {
     const item = this.menu.find((item) => item.id === id);
     if (!item) {
-      throw new NotFoundException(`Menu item not found`);
+      throw new NotFoundException('Menu item not found');
     }
     return item;
   }
-  getHello(): string {
-    return 'Hello World!';
+  getMenu() {
+    return this.menu;
   }
 }
